@@ -1,1 +1,1 @@
-var appName = angular.module('appName', []);
+var animalShelter = angular.module('animalShelter', []);

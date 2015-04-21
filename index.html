@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="appName">
-  <head>
-    <meta charset="UTF-8">
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="lib/angular.js"></script>
-    <script src="app.js"></script>
-    <!-- // <script src="controllers/ControllerName.js"></script> -->
-    <!-- // <script src="services/FactoryName.js"></script> -->
+<html lang="en" ng-app="animalShelter">
+<head>
+  <meta charset="UTF-8">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="lib/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/AnimalsController.js"></script>
+  <script src="services/ShelterFactory.js"></script>
 
-    <title></title>
-  </head>
-  <body>
-
-  </body>
+  <title>Animal Shelter</title>
+</head>
+<body>
+  <div class="container">
+    <div ng-controller="AnimalsCtrl">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>New Animal</h4>
+          <form ng-submit="addAnimal()" class="form-inline" role="form">
+            <select ng-model="animalType">
+              <option value="bunny">Bunny</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="bird">Bird</option>
+              <option value="snake">Snake</option>
+            </select>
+            <button type="submit" class="btn btn-primary btn-xs">Add</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h4 ng-show="animals.length">Animal Shelter List</h4>
+          <ul>
+            <li ng-repeat="item in animals">
+            {{item.type}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
