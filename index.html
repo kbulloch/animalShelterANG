@@ -15,7 +15,7 @@
   <div class="container">
     <div ng-controller="AnimalsCtrl">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <h4>New Animal</h4>
           <form ng-submit="addAnimal()" class="form-inline" role="form">
             <input ng-model="animalName" type="text" placeholder="Name" required>
@@ -29,15 +29,58 @@
             <button type="submit" class="btn btn-primary btn-xs">Add</button>
           </form>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <h4 ng-show="animals.length">Animal Shelter List</h4>
           <ul>
             <li ng-repeat="item in animals">
-            {{item.type}}
-            {{item.name}}
+              {{item.name}}
+              {{item.type}}
             </li>
           </ul>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <h4 ng-show="animals.length">Bunny List</h4>
+          <ul>
+            <li ng-repeat="item in (animals | filter:'bunny')">
+              {{item.name}}
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h4 ng-show="animals.length">Dog List</h4>
+          <ul>
+            <li ng-repeat="item in (animals | filter:'dog')">
+              {{item.name}}
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h4 ng-show="animals.length">Cat List</h4>
+          <ul>
+            <li ng-repeat="item in (animals | filter:'cat')">
+              {{item.name}}
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h4 ng-show="animals.length">Snake List</h4>
+          <ul>
+            <li ng-repeat="item in (animals | filter:'snake')">
+              {{item.name}}
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h4 ng-show="animals.length">Bird List</h4>
+          <ul>
+            <li ng-repeat="item in (animals | filter:'bird')">
+              {{item.name}}
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </div>
