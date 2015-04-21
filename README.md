@@ -8,7 +8,9 @@ which have been adopted.
 
 SetUp
 1. Open terminal and type: 'git clone https://github.com/evanb2/animalShelterANG.git'
+
 2. Open animalShelterANG folder and open index.html file in your web browser.
+
 3. Follow instructions on the page.
 
 # Copyright (c) 2015 Evan Butler & Kyle Bulloch
