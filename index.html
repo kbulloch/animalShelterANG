@@ -7,6 +7,7 @@
   <script src="lib/angular.js"></script>
   <script src="app.js"></script>
   <script src="controllers/AnimalsController.js"></script>
+  <script src="controllers/AdoptionController.js"></script>
   <script src="services/ShelterFactory.js"></script>
 
   <title>Animal Shelter</title>
@@ -15,7 +16,7 @@
   <div class="container">
     <div ng-controller="AnimalsCtrl">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
           <h4>New Animal</h4>
           <form ng-submit="addAnimal()" class="form-inline" role="form">
             <input ng-model="animalName" type="text" placeholder="Name" required>
@@ -28,15 +29,6 @@
             </select>
             <button type="submit" class="btn btn-primary btn-xs">Add</button>
           </form>
-        </div>
-        <div class="col-sm-6">
-          <h4 ng-show="animals.length">Animal Shelter List</h4>
-          <ul>
-            <li ng-repeat="item in animals">
-              {{item.name}}
-              {{item.type}}
-            </li>
-          </ul>
         </div>
       </div>
       <div class="row">
@@ -80,7 +72,16 @@
             </li>
           </ul>
         </div>
-
+      </div>
+    </div>
+    <div class="row" ng-controller="AdoptionCtrl">
+      <div class="col-sm-6" ng-show="animalsNotAdopted.length">
+        <h3>Lonely Animals</h3>
+        <ul>
+          <li ng-repeat="item in animalsNotAdopted = (animals | filter:{adoptionStatus: false})">
+            {{item.name}}, {{item.type}} <button ng-click="adoptAnimal(item)">Adopt</button>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
