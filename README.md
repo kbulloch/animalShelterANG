@@ -1,15 +1,17 @@
-# Name:
-# Date:
+# Name: Evan Butler & Kyle Bulloch
+# Date: April 21, 2015
 
-Description:
+Description: A site for an animal shelter to keep track of animals by type, and
+which have been adopted.
 
 # SetUp and Use
-In order to use this program you will need a browser...NOT IE!
 
 SetUp
-1.
+1. Open terminal and type: 'git clone https://github.com/evanb2/animalShelterANG.git'
+2. Open animalShelterANG folder and open index.html file in your web browser.
+3. Follow instructions on the page.
 
-# Copyright (c) 2015 (Name)
+# Copyright (c) 2015 Evan Butler & Kyle Bulloch
 
 # The MIT License (MIT)
 

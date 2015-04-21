@@ -32,42 +32,57 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-2">
-          <h4 ng-show="animals.length">Bunny List</h4>
+        <div ng-show="bunnylist.length" class="col-sm-2">
+          <h4>Bunny List</h4>
+          <p>
+            {{ShelterFactory.countAnimalsByType("bunny")}}
+          </p>
           <ul>
-            <li ng-repeat="item in (animals | filter:'bunny')">
+            <li ng-repeat="item in bunnylist = (animals | filter:{type: 'bunny'})">
               {{item.name}}
             </li>
           </ul>
         </div>
-        <div class="col-sm-2">
-          <h4 ng-show="animals.length">Dog List</h4>
+        <div ng-show="doglist.length" class="col-sm-2">
+          <h4>Dog List</h4>
+          <p>
+            {{ShelterFactory.countAnimalsByType("dog")}}
+          </p>
           <ul>
-            <li ng-repeat="item in (animals | filter:'dog')">
+            <li ng-repeat="item in doglist = (animals | filter:{type: 'dog'})">
               {{item.name}}
             </li>
           </ul>
         </div>
-        <div class="col-sm-2">
-          <h4 ng-show="animals.length">Cat List</h4>
+        <div ng-show="catlist.length" class="col-sm-2">
+          <h4>Cat List</h4>
+          <p>
+            {{ShelterFactory.countAnimalsByType("cat")}}
+          </p>
           <ul>
-            <li ng-repeat="item in (animals | filter:'cat')">
+            <li ng-repeat="item in catlist = (animals | filter:{type: 'cat'})">
               {{item.name}}
             </li>
           </ul>
         </div>
-        <div class="col-sm-2">
-          <h4 ng-show="animals.length">Snake List</h4>
+        <div ng-show="snakelist.length" class="col-sm-2">
+          <h4>Snake List</h4>
+          <p>
+            {{ShelterFactory.countAnimalsByType("snake")}}
+          </p>
           <ul>
-            <li ng-repeat="item in (animals | filter:'snake')">
+            <li ng-repeat="item in snakelist = (animals | filter:{type: 'snake'})">
               {{item.name}}
             </li>
           </ul>
         </div>
-        <div class="col-sm-2">
-          <h4 ng-show="animals.length">Bird List</h4>
+        <div class="col-sm-2" ng-show="birdlist.length">
+          <h4>Bird List</h4>
+          <p>
+            {{ShelterFactory.countAnimalsByType("bird")}}
+          </p>
           <ul>
-            <li ng-repeat="item in (animals | filter:'bird')">
+            <li ng-repeat="item in birdlist = (animals | filter:{type: 'bird'})">
               {{item.name}}
             </li>
           </ul>
@@ -79,7 +94,15 @@
         <h3>Lonely Animals</h3>
         <ul>
           <li ng-repeat="item in animalsNotAdopted = (animals | filter:{adoptionStatus: false})">
-            {{item.name}}, {{item.type}} <button ng-click="adoptAnimal(item)">Adopt</button>
+            {{item.name}} the {{item.type}} <button ng-click="adoptAnimal(item)">Adopt</button>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-6" ng-show="animalsAdopted.length">
+        <h3>Happy Animals</h3>
+        <ul>
+          <li ng-repeat="item in animalsAdopted = (animals | filter:{adoptionStatus: true})">
+            {{item.name}} the {{item.type}}
           </li>
         </ul>
       </div>

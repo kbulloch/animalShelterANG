@@ -6,5 +6,19 @@ animalShelter.factory('ShelterFactory', function ShelterFactory() {
     this.animals.push( {name: name, type: type, adoptionStatus: false} );
   };
 
+  factory.countAnimals = function() {
+    return this.animals.length;
+  };
+
+  factory.countAnimalsByType = function(type) {
+    var count = 0;
+    for(var i = 0; i < this.animals.length; i++ ) {
+      if(this.animals[i].type === type) {
+        count ++;
+      }
+    }
+    return count;
+  };
+
   return factory;
 });
