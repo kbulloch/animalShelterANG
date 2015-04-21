@@ -13,11 +13,14 @@
   <title>Animal Shelter</title>
 </head>
 <body>
+  <div class="jumbotron">
+    <h1>Happy Animals</h1>
+  </div>
   <div class="container">
     <div ng-controller="AnimalsCtrl">
       <div class="row">
         <div class="col-sm-12">
-          <h4>New Animal</h4>
+          <h2>New Animal</h2>
           <form ng-submit="addAnimal()" class="form-inline" role="form">
             <input ng-model="animalName" type="text" placeholder="Name" required>
             <select ng-model="animalType">
@@ -94,7 +97,7 @@
         <h3>Lonely Animals</h3>
         <ul>
           <li ng-repeat="item in animalsNotAdopted = (animals | filter:{adoptionStatus: false})">
-            {{item.name}} the {{item.type}} <button ng-click="adoptAnimal(item)">Adopt</button>
+            {{item.name}} the {{item.type}} <button ng-click="adoptAnimal(item)" class="btn btn-warning btn-xs">Adopt</button>
           </li>
         </ul>
       </div>

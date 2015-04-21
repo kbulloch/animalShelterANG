@@ -1,0 +1,18 @@
+p {
+  background-color: #7E8455;
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+.jumbotron {
+  text-align: center;
+  color: white;
+  background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSCUWZPrzC8XE6xpmfqGrUN33r7sRqFLKVOO4kzCkIJNotFPb4C");
+}
+
+body {
+  background-color: #E5D9BF;
+}
