@@ -3,7 +3,8 @@ animalShelter.controller('AnimalsCtrl', function AnimalsCtrl($scope, ShelterFact
   $scope.ShelterFactory = ShelterFactory;
 
   $scope.addAnimal = function() {
+    var name = $scope.animalName;
     var type = $scope.animalType;
-    $scope.ShelterFactory.addAnimal(type);
+    $scope.ShelterFactory.addAnimal(name, type);
   };
 });

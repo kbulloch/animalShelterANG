@@ -18,6 +18,7 @@
         <div class="col-md-6">
           <h4>New Animal</h4>
           <form ng-submit="addAnimal()" class="form-inline" role="form">
+            <input ng-model="animalName" type="text" placeholder="Name" required>
             <select ng-model="animalType">
               <option value="bunny">Bunny</option>
               <option value="dog">Dog</option>
@@ -33,6 +34,7 @@
           <ul>
             <li ng-repeat="item in animals">
             {{item.type}}
+            {{item.name}}
             </li>
           </ul>
         </div>
